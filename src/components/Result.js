@@ -9,7 +9,7 @@ class Result extends React.Component {
         <h3>{this.props.latitude}</h3>
         <h3>{this.props.longitude}</h3>
         <h3>{this.props.currentLocation}</h3>     
-        <h3>{this.props.currentLocationLong}</h3>     
+        <h3>{this.props.currentZoom}</h3>     
       </div>
     );
   }

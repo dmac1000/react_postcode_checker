@@ -1,12 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'leaflet/dist/leaflet.css';
 import React from "react";
 
 import Title from "./components/Title";
 import Form from "./components/Form";
 import Result from "./components/Result";
-import MapView from "./components/MapView";
-import { MapContainer as LeafletMap, TileLayer } from 'react-leaflet';
+import { MapContainer as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 
 class App extends React.Component {
   constructor() {
@@ -18,16 +18,13 @@ class App extends React.Component {
       european_electoral_region: undefined,
       error: undefined,
       // hard coded to test
-      latitude: 59.024808,
+      latitude: 55.024808,
       longitude: -7.256165,
-      currentLocation: [0, 0],
+      currentLocation: [55.024808, -8.256165],
       zoom: 12
     };
   }
 
-  onMoveend (map) {
-    this.props.onMoveend(map)
-  }
 
   // get postcode input, send to apis and return result. If valid call mapAPI
   callPostcodeAPI = async (event) => {
@@ -45,10 +42,10 @@ class App extends React.Component {
           european_electoral_region: response.result.european_electoral_region,
           latitude: response.result.latitude,
           longitude: response.result.longitude,
-         currentLocation: [response.result.latitude, response.result.longitude],
-
+          currentLocation: [response.result.latitude, response.result.longitude],
+          zoom:16
         });
-        // NEED TO GET IT TO REDRAW THE MAP AFTER A VALIDATE POSTCODE !!
+        // NEED TO GET IT TO REDRAW THE MAP AFTER A VALID POSTCODE !!
 
       } else {
         this.setState({
@@ -65,8 +62,8 @@ class App extends React.Component {
 
 
   render() {
-    // TESTING: try as single variable then array
-    const {currentLocation, zoom} = this.state
+    // TESTING: getting state
+    let {currentLocation, zoom} = this.state
     return (
       <div className="postcode-body">
         <Title
@@ -80,12 +77,13 @@ class App extends React.Component {
           longitude={this.state.longitude}
           error={this.state.error}
           //TESTING: to show value of currentlocation
+          currentZoom={zoom}
           currentLocation={currentLocation}
-          // TESTING: Mapview not used
         />
     
         <LeafletMap 
         center = {currentLocation}
+        //center = {this.state.currentLocation}
         //TESTING: hard coded to test
         //center ={[55.024808, -7.256165]} 
         zoom ={zoom} >
@@ -93,6 +91,7 @@ class App extends React.Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         /> 
+        <Marker position={currentLocation}></Marker>
         </LeafletMap>
       </div>
     );
