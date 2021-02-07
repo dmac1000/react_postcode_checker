@@ -6,8 +6,9 @@ body {
 .title_container {
   background: white;
   padding: 10px 10px;
-  width: 50%;
-  margin: 10px auto auto auto;
+  width: 70%;
+  margin: auto;
+  text-align: center;
   color: #4caf50;
 }
 
@@ -15,14 +16,20 @@ body {
   background: white;
   width: 30%;
   margin: 10px auto auto auto;
+  text-align: center;
   color: #536aeb;
+}
+
+.postcode_input{
+  font-size: 20px;
+  margin: auto auto 10px auto;
 }
 .result {
   width: 50%;
 }
 
 .postcode_buttons_container {
-  width: 20%;
+  width: 40%;
   margin: auto;
 }
 .postcode_button {
@@ -42,4 +49,5 @@ body {
 .leaflet-container { 
    width: 70%;  height: 77vh;
    margin: auto; 
+   border: 1px solid rgb(83, 79, 79);
   }
