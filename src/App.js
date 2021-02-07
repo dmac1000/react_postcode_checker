@@ -1,6 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'leaflet/dist/leaflet.css';
+// default icon fix 
+// https://github.com/ghybs/leaflet-defaulticon-compatibility
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+import 'leaflet-defaulticon-compatibility';
 import React from "react";
 
 import Title from "./components/Title";
@@ -18,8 +22,8 @@ class App extends React.Component {
       european_electoral_region: undefined,
       error: undefined,
       // hard coded to test
-      selectedLocation: [55.024808, -8.256165],
-      zoom: 12
+      selectedLocation: [53.495849, -7.790033],
+      zoom: 7
     };
   }
 
