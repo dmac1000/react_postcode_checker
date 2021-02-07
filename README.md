@@ -1,4 +1,4 @@
-# react_calculator_tutorial
+# react_postcode_checker
 
 
 ## Table of contents
@@ -30,7 +30,7 @@ Project created with:
 <div align="center">
         Main Page
         <br>
-        <img width="30%" src="screenshots/main_screen.PNG" alt="Main Screen" title="Main Screen"</img>
+        <img width="40%" src="screenshots/main_screen.PNG" alt="Main Screen" title="Main Screen"</img>
         <br> Sample Popup
         <br>
           <img width="30%" src="screenshots/popup.PNG" alt="Main Screen" title="Main Screen"</img>      
