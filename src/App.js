@@ -19,6 +19,9 @@ class App extends React.Component {
       heading: "Postcode Checker",
       subheading: "Enter a Postcode to validate it !",
       postcode: undefined,
+      primary_care_trust: undefined,
+      nhs_ha: undefined,
+      admin_district: undefined,
       european_electoral_region: undefined,
       error: undefined,
       // hard coded to test
@@ -41,6 +44,10 @@ class App extends React.Component {
 
       if (call.ok) {
         this.setState({
+          postcode: response.result.postcode, 
+          primary_care_trust: response.result.primary_care_trust, 
+          nhs_ha: response.result.nhs_ha,        
+          admin_district: response.result.admin_district,
           european_electoral_region: response.result.european_electoral_region,
           selectedLocation: [response.result.latitude, response.result.longitude],
           zoom:18
@@ -87,7 +94,10 @@ class App extends React.Component {
           /> 
           <Marker position={selectedLocation} >
             <Popup>
-                The location of your postcode. <br /> 
+                The location of {this.state.postcode}. <br/> 
+                {this.state.primary_care_trust} {this.state.nhs_ha}. <br/> 
+                {this.state.admin_district}. <br/> 
+                {this.state.european_electoral_region}.
             </Popup>
           </Marker>
         </LeafletMap>

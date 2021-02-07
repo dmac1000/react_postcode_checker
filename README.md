@@ -21,10 +21,19 @@ Project created with:
 ### Libraries  
 * [Leaflet](https://leafletjs.com/)
 * [Leaflet React](https://react-leaflet.js.org/)
-	
+
+### Icons 
+* Postcode icon from [icons8.com](https://icons8.com/icons/set/postcode)
+* Resized using [Online png tools](https://onlinepngtools.com/resize-png)
+
 ## Screenshot
 <div align="center">
+        Main Page
+        <br>
         <img width="30%" src="screenshots/main_screen.PNG" alt="Main Screen" title="Main Screen"</img>
+        <br> Sample Popup
+        <br>
+          <img width="30%" src="screenshots/popup.PNG" alt="Main Screen" title="Main Screen"</img>      
 </div>
 
 ## Setup
