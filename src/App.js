@@ -21,7 +21,7 @@ function ChangeView({ center, zoom }) {
   map.flyTo(center, zoom,{
     duration: 3
     });
-    
+
   return null;
 }
 
@@ -39,7 +39,7 @@ class App extends React.Component {
       european_electoral_region: undefined,
       error: undefined,
       // hard coded default to centre of ireland
-      selectedLocation: [53.430073,  -8.035491],
+      selectedLocation: [53.430073,  -7.790033],
       zoom: 7
     };
   }
