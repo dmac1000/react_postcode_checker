@@ -8,7 +8,7 @@
 * [Setup](#setup)
 
 ## General info
-The user enter postcode details and is validated using [@postcode.io API](http://postcodes.io/) and the location is displayed on a map.  
+The user enters their postcode, which is validated using [@postcode.io API](http://postcodes.io/) and the location is displayed on a map.  
 For Leaflet inspiration [@sabrinasuarezarrieta](https://dev.to/sabrinasuarezarrieta/how-to-implement-react-leaflet-js-maps-in-your-react-project-igo)  
 Resolve missing default Leaflet Marker
 [@ghybs](https://github.com/ghybs/leaflet-defaulticon-compatibility)
